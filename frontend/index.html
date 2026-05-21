@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager Task</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager App</h1>
+        <hr>
+
+        <div id="auth-section">
+            <h2>Register / Login</h2>
+            <div class="form-group">
+                <input type="text" id="username" placeholder="Username">
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button onclick="handleRegister()">Register</button>
+            <button onclick="handleLogin()">Login</button>
+        </div>
+
+        <div id="task-section" style="display: none;">
+            <div class="header-row">
+                <h3>Welcome, <span id="user-display"></span>!</h3>
+                <button onclick="handleLogout()" class="btn-danger">Logout</button>
+            </div>
+            
+            <hr>
+            <h4>Create New Task</h4>
+            <div class="form-group">
+                <input type="text" id="task-title" placeholder="Task Title">
+                <input type="text" id="task-desc" placeholder="Task Description">
+                <button onclick="handleCreateTask()">Add Task</button>
+            </div>
+
+            <hr>
+            <div class="filter-controls">
+                <label for="filter-status">Filter Status:</label>
+                <select id="filter-status" onchange="loadTasks()">
+                    <option value="all">All Tasks</option>
+                    <option value="completed">Completed Only</option>
+                    <option value="pending">Pending Only</option>
+                </select>
+            </div>
+
+            <h4>Your Tasks</h4>
+            <ul id="task-list"></ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

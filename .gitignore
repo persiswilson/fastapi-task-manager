@@ -1,0 +1,13 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/routers/__pycache__/
+*.pyc
+
+# Databases
+backend/tasks.db
+
+# Environment variables
+backend/.env
+.env
